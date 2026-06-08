@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "dailyGoal": {
+      "title": "Daily Goal",
+      "description": "User's daily study goal",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "goal": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "date", "goal", "completed", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/dailyGoals/{goalId}": {
+      "schema": "dailyGoal",
+      "description": "User specific daily study goals"
+    }
+  }
+}
